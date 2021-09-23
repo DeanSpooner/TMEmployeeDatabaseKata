@@ -1,0 +1,14 @@
+{
+  "name": "employee-report",
+  "version": "1.0.0",
+  "description": "Employee Report\r About this Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.2.1"
+  }
+}
