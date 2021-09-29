@@ -30,6 +30,22 @@ describe("As shop owner I want to view a list of all employees, which are older 
 
     expect(getOver18(employeesDb)).toEqual(expectedResult);
   });
+
+  it("returns an array where every element within is an object, each with a string 'name' value and a number 'age' value.", () => {
+    const employeesDb = [
+      { name: "Max", age: 17 },
+      { name: "Sepp", age: 18 },
+      { name: "Nina", age: 15 },
+      { name: "Mike", age: 51 },
+    ];
+    employeesDb.forEach((employee) => expect(typeof employee).toBe("object"));
+    employeesDb.forEach((employee) =>
+      expect(typeof employee.name).toBe("string")
+    );
+    employeesDb.forEach((employee) =>
+      expect(typeof employee.age).toBe("number")
+    );
+  });
 });
 
 describe("As shop owner I want the list of employees to be sorted by their name, so I can find employees easier.", () => {
@@ -37,6 +53,7 @@ describe("As shop owner I want the list of employees to be sorted by their name,
     const employeesDb = [];
     expect(sortEmployeesByName(employeesDb)).toEqual([]);
   });
+
   it("returns an array of employees sorted by their names alphabetically", () => {
     const employeesDb = [
       { name: "Max", age: 17 },
